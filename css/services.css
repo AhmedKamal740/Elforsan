@@ -1,0 +1,201 @@
+:root {
+  --main-color: #042147;
+  --section-padding: 12.5rem; /* 200px */
+}
+.secondary-nav {
+  background-color: #57584f33;
+  height: 70px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.secondary-nav .navbar-text {
+  padding: 0;
+}
+.secondary-nav .text {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: right;
+}
+.secondary-nav .text span:first-child a {
+  color: #404040;
+}
+.secondary-nav .text span:nth-child(2) {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 1%;
+  text-align: right;
+  margin: 0 10px;
+}
+.secondary-nav .text span:last-child a {
+  color: #000000;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 1%;
+  text-align: right;
+}
+main {
+  margin-bottom: 200px;
+}
+main .services-text {
+  text-align: center;
+  padding: 80px;
+}
+main .services-text > h1 {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 100%;
+  margin-bottom: 40px;
+  color: var(--main-color);
+}
+main .services-text > p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 170%;
+  color: #3f4853;
+}
+main .services {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 80px;
+}
+main .services .content {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 16px;
+}
+@media (max-width: 767px) {
+  main .services .content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+main .services .content .service {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  color: #000000;
+  background-color: #f3f3f4;
+  padding: 16px 20px;
+  border-radius: 49px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+main .services .content .service.active {
+  background-color: #f2ff9e;
+  transform: translateY(-4px) scale(1.05);
+}
+
+main .services .content .service:hover {
+  background-color: #f2ff9e;
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* ====== slider====== */
+main .carousel-inner .carousel-item {
+  height: 100%;
+}
+main .carousel-fade .carousel-item {
+  transition: opacity 1.5s ease-in-out;
+}
+main .carousel-inner .carousel-item .row .col-md-7,
+main .carousel-inner .carousel-item .row .col-md-5 {
+  margin: 0;
+  min-height: 500px;
+}
+
+main .carousel-inner .carousel-item .row .col-md-7 > h3 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 100%;
+  text-align: right;
+  color: #000000;
+  margin-bottom: 8px;
+  padding-top: 8px;
+}
+main .carousel-inner .carousel-item .row .col-md-7 > p,
+main .carousel-inner .carousel-item .row .col-md-7 > ul {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 40px;
+  color: #3f4853;
+  text-align: justify;
+  margin: 0;
+}
+main .carousel-inner .carousel-item .row .col-md-7 > ul li span {
+  font-weight: 700;
+}
+main .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 12px;
+}
+main .custom-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  flex-wrap: wrap;
+  gap: 10px;
+  user-select: none;
+}
+
+main .pagination-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .pagination-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* حجم وشكل الأيقونة نفسها */
+main .pagination-btn .carousel-control-prev-icon,
+main .pagination-btn .carousel-control-next-icon {
+  width: 40px;
+  height: 40px;
+  background-size: 100% 100%;
+  filter: invert(0.4); /* يخلي السهم رمادي بسيط */
+  transition: filter 0.2s ease;
+}
+
+main .page-number {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  vertical-align: middle;
+  min-width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: #3f4853;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+main .page-number.active {
+  background-color: #042147;
+  color: #fafafa;
+}
+
+main .page-ellipsis {
+  display: inline-flex;
+  font-size: 24px;
+  color: #8c9094;
+}
