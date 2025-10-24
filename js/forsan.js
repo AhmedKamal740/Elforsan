@@ -16,10 +16,10 @@ function updateBgSlides() {
 updateBgSlides();
 
 // تغيير الخلفية كل 5 ثواني مثلاً
-setInterval(() => {
-  currentBgSlide = (currentBgSlide + 1) % bgLayers.length;
-  updateBgSlides();
-}, 5000);
+// setInterval(() => {
+//   currentBgSlide = (currentBgSlide + 1) % bgLayers.length;
+//   updateBgSlides();
+// }, 5000);
 
 document.addEventListener("DOMContentLoaded", function () {
   const swiper = new Swiper(".mySwiper", {
@@ -58,6 +58,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   swiper.on("slideChange", updateMainPagination);
+  swiper.on("slideChange", () => {
+    currentBgSlide = swiper.realIndex % bgLayers.length;
+    updateBgSlides();
+  });
 
   paginationDots.forEach((dot) => {
     dot.addEventListener("click", (e) => {

@@ -1,18 +1,19 @@
 main {
   margin-bottom: 200px;
+  position: relative;
 }
 /* ====== Background Layers ====== */
-.background-layers {
+main .background-layers {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: -1;
   overflow: hidden;
 }
 
-.background-layer {
+main .background-layer {
   position: absolute;
   top: 0;
   left: 0;
@@ -22,17 +23,38 @@ main {
   transition: opacity 0.8s ease-in-out;
   z-index: -1;
 }
+.background-layer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      290.96deg,
+      rgba(255, 255, 255, 0.15) 20.73%,
+      rgba(255, 255, 255, 0.35) 83.31%
+    ),
+    linear-gradient(
+      353.32deg,
+      rgba(255, 255, 255, 0) 81.15%,
+      rgba(255, 255, 255, 0.25) 89.85%
+    ),
+    linear-gradient(
+      176.39deg,
+      rgba(255, 255, 255, 0) 25.55%,
+      rgba(255, 255, 255, 0.3) 86.9%
+    );
+  pointer-events: none;
+  z-index: 2;
+}
 
-.background-layer.active {
+main .background-layer.active {
   opacity: 1;
   z-index: -12;
 }
 
-.background-layer img {
+main .background-layer img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center center;
+  display: block;
 }
 
 main .all-content {
